@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .cadastro-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+
+        .campo { margin-bottom: 15px; }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Evita que o padding aumente a largura */
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+        }
+
+        .mostrar-senha {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .mostrar-senha input { width: auto; margin-right: 8px; }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover { background-color: #357abd; }
+    </style>
+</head>
+<body>
+
+<div class="cadastro-container">
+    <h2>Cadastrar-se</h2>
+    
+    <form action="#" method="POST">
+        <div class="campo">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+        </div>
+
+        <div class="campo">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+        </div>
+
+        <div class="campo">
+            <label for="usuario">Nome de Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="@joao123" required>
+        </div>
+
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="No mínimo 6 caracteres" required>
+            
+            <label class="mostrar-senha">
+                <input type="checkbox" onclick="toggleSenha()"> Mostrar senha
+            </label>
+        </div>
+
+        <button type="submit">Finalizar Cadastro</button>
+    </form>
+</div>
+
+<script>
+    // Função para mostrar/esconder a senha
+    function toggleSenha() {
+        const x = document.getElementById("senha");
+        x.type = x.type === "password" ? "text" : "password";
+    }
+</script>
+
+</body>
+</html>
